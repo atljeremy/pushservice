@@ -1,0 +1,107 @@
+/***********************************************************
+* HTML ELEMENTS
+***********************************************************/
+body {
+    font-family: default-font, Helvetica, Verdana, Arial, sans-serif;
+    padding: 10px;
+    background: #CCCCCC;
+}
+h1 {
+    color: #282828;
+    text-align: center;
+    font-family: default-font, Helvetica, Verdana, Arial, sans-serif;
+    font-size: 3em;
+    margin: 5px auto 0px auto;
+    text-shadow: 0px 1px 0px #FFF;
+}
+h2 {
+    color: #282828;
+    text-align: center;
+    font-family: default-font, Helvetica, Verdana, Arial, sans-serif;
+    font-size: 1.5em;
+    margin: 5px auto 0px auto;
+    text-shadow: 0px 1px 0px #FFF;
+}
+h3 {
+    color: #282828;
+    text-align: center;
+    font-family: default-font, Helvetica, Verdana, Arial, sans-serif;
+    font-size: 1em;
+    margin: 5px auto 0px auto;
+    text-shadow: 0px 1px 0px #FFF;
+}
+
+/***********************************************************
+* HEADER STYLES
+***********************************************************/
+#header {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/***********************************************************
+* FORM STYLES
+***********************************************************/
+#pushForm {
+    background: #DFDFDF;
+    border: 1px solid #FFFFFF;
+    padding: 20px;
+    margin: 10px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/***********************************************************
+* RESULT DIV (NOTIFICATION) STYLES
+***********************************************************/
+.resultSuccess {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #FFFFFF;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: rgb(196,237,189);
+    background: -moz-linear-gradient(top,  rgba(196,237,189,1) 0%, rgba(138,237,123,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(196,237,189,1)), color-stop(100%,rgba(138,237,123,1)));
+    background: -webkit-linear-gradient(top,  rgba(196,237,189,1) 0%,rgba(138,237,123,1) 100%);
+    background: -o-linear-gradient(top,  rgba(196,237,189,1) 0%,rgba(138,237,123,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(196,237,189,1) 0%,rgba(138,237,123,1) 100%);
+    background: linear-gradient(top,  rgba(196,237,189,1) 0%,rgba(138,237,123,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4edbd', endColorstr='#8aed7b',GradientType=0 );
+}
+.resultError {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #FFFFFF;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: rgb(255,215,211);
+    background: -moz-linear-gradient(top,  rgba(255,215,211,1) 0%, rgba(255,110,96,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,215,211,1)), color-stop(100%,rgba(255,110,96,1)));
+    background: -webkit-linear-gradient(top,  rgba(255,215,211,1) 0%,rgba(255,110,96,1) 100%);
+    background: -o-linear-gradient(top,  rgba(255,215,211,1) 0%,rgba(255,110,96,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(255,215,211,1) 0%,rgba(255,110,96,1) 100%);
+    background: linear-gradient(top,  rgba(255,215,211,1) 0%,rgba(255,110,96,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd7d3', endColorstr='#ff6e60',GradientType=0 );
+}
+
+/***********************************************************
+* SETUP DEFAULT FONT
+***********************************************************/
+@font-face {
+  font-family: default-font;
+  src: url('Prosto.ttf')
+}
