@@ -7,21 +7,26 @@ PRMPushService = (function() {
   }
 
   PRMPushService.prototype.bindFormSubmitListener = function() {
-    $("#pushForm").live("submit", function(event) {
+    $("#pushForm").live("submit", function(e) {
 
-      event.preventDefault();
-      event.stopPropagation();
-      if ($.browser.msie) {
-        event.originalEvent.keyCode = 0;
-        event.originalEvent.cancelBubble = true;
-        event.originalEvent.returnValue = false;
-      }
+      push.stopEvent(e);
 
       var message = $("#pushText").val();
 
       if (message != null && message != "") {
 
-        var pushData = JSON.stringify({ "channel": "", "data": { "alert": message } });
+        var jsonData = {};
+        jsonData.channel = "";
+        jsonData.data    = {};
+        jsonData.data.alert = message;
+
+        var typeVal = push.getTypeValue();
+
+        if(typeVal != null && typeVal != "" && typeVal != "all"){
+          jsonData.type = typeVal;
+        }
+
+        var pushData = JSON.stringify( jsonData );
 
         $.ajax({
           type: "POST",
@@ -34,15 +39,16 @@ PRMPushService = (function() {
           data: pushData,
           dataType: "json",
           success: function() {
-            $("#result").show().removeClass().addClass("resultSuccess").html("<h2>Message Sent!</h2>").fadeOut(5000);
+            $("#pushText").val("");
+            $("#result").hide().removeClass().addClass("resultSuccess").html("<h2>Message Sent!</h2>").fadeIn().delay(2000).fadeOut();
           },
           error: function() {
-            $("#result").show().removeClass().addClass("resultError").html("<h2>ERROR! Please try again.</h2>").fadeOut(5000);
+            $("#result").hide().removeClass().addClass("resultError").html("<h2>ERROR! Please try again.</h2>").fadeIn().delay(2000).fadeOut();
           }
         });
       } else {
         $("#pushText").focus();
-        $("#result").show().removeClass().addClass("resultError").html("<h2>ERROR! Message can't be empty.</h2>").fadeOut(5000);
+        $("#result").hide().removeClass().addClass("resultError").html("<h2>ERROR! Message can't be empty.</h2>").fadeIn().delay(2000).fadeOut();
       }
       return false;
     });
@@ -56,6 +62,18 @@ PRMPushService = (function() {
       event.originalEvent.cancelBubble = true;
       event.originalEvent.returnValue = false;
     }
+  };
+
+  PRMPushService.prototype.getTypeValue = function() {
+    var radio, radios, value = null, _i, _len;
+    radios = $("input[type='radio']");
+    for (_i = 0, _len = radios.length; _i < _len; _i++) {
+      radio = radios[_i];
+      if (radio.checked) {
+        value = radio.value;
+      }
+    }
+    return value;
   };
 
   PRMPushService.prototype.log = function(){

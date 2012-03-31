@@ -30,6 +30,9 @@ h3 {
     margin: 5px auto 0px auto;
     text-shadow: 0px 1px 0px #FFF;
 }
+ul {
+  list-style: none;
+}
 
 /***********************************************************
 * HEADER STYLES
@@ -54,6 +57,9 @@ h3 {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+}
+#pushText {
+  float: left;
 }
 
 /***********************************************************
