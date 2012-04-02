@@ -11,7 +11,8 @@ class PushNotifications(
 //               @ObjectId @Id val id: String,
 //               @BeanProperty @JsonProperty("date") val date: Date,
 //               @BeanProperty @JsonProperty("message") val message: String,
-//               @BeanProperty @JsonProperty("author") val author: String) {
+//               @BeanProperty @JsonProperty("author") val author: String
+) {
 //
 //  @ObjectId
 //  @Id
