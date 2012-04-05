@@ -3,7 +3,7 @@ import org.codehaus.jackson.annotate.JsonProperty
 import reflect.BeanProperty
 import javax.persistence.Id
 import play.api.Play.current
-import play.modules.mongodb.jackson.MongoDB
+//import play.modules.mongodb.jackson.MongoDB
 import scala.collection.JavaConversions._
 import java.util.Date
 

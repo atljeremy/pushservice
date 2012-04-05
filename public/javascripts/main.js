@@ -28,6 +28,8 @@ PRMPushService = (function() {
 
         var pushData = JSON.stringify( jsonData );
 
+        console.log(pushData);
+
         $.ajax({
           type: "POST",
           url: "https://api.parse.com/1/push",
